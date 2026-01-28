@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Research - Ayush Shahi"
+  description="Research by Ayush Shahi on development economics, labor markets, and inequality"
+  currentPage="research"
+>
+  <h1>Research</h1>
+
+  <p>
+    My research focuses on development economics, with particular emphasis on understanding
+    how social structures and norms influence economic outcomes in South Asia.
+  </p>
+
+  <h2>Work in Progress</h2>
+
+  <article class="paper-entry">
+    <h3 class="paper-title">
+      Social Norms and Economic Opportunity: Evidence from India
+      <span class="paper-links">
+        <!-- Add links when available -->
+        <!-- <a href="#">[PDF]</a> -->
+      </span>
+    </h3>
+    <p class="paper-authors">Ayush Shahi</p>
+    <button class="abstract-toggle" onclick="toggleAbstract('abstract-1')">
+      <span class="arrow">&#9660;</span> Abstract
+    </button>
+    <div id="abstract-1" class="abstract-content">
+      <p>
+        This paper documents variation in social norms concerning caste and gender across
+        India and examines their relationship with economic opportunity. Using survey data
+        and administrative records, I investigate how these norms shape labor market outcomes
+        and intergenerational mobility. The findings suggest significant heterogeneity in
+        social attitudes across regions, which correlates with differences in economic
+        participation and occupational choice.
+      </p>
+    </div>
+  </article>
+
+  <article class="paper-entry">
+    <h3 class="paper-title">
+      Labor Market Inequality and Social Mobility
+      <span class="paper-links">
+        <!-- Add links when available -->
+      </span>
+    </h3>
+    <p class="paper-authors">Ayush Shahi</p>
+    <button class="abstract-toggle" onclick="toggleAbstract('abstract-2')">
+      <span class="arrow">&#9660;</span> Abstract
+    </button>
+    <div id="abstract-2" class="abstract-content">
+      <p>
+        This project examines the determinants of social mobility in developing economies,
+        focusing on the role of labor market institutions and access to economic opportunity.
+        The research combines household survey data with administrative records to trace
+        intergenerational outcomes and identify barriers to upward mobility.
+      </p>
+    </div>
+  </article>
+
+  <!--
+  Template for adding more papers:
+
+  <article class="paper-entry">
+    <h3 class="paper-title">
+      Paper Title Here
+      <span class="paper-links">
+        <a href="#">[PDF]</a>
+        <a href="#">[Appendix]</a>
+      </span>
+    </h3>
+    <p class="paper-authors">Author 1, Author 2</p>
+    <p class="paper-venue">Journal Name, Year</p>
+    <button class="abstract-toggle" onclick="toggleAbstract('abstract-X')">
+      <span class="arrow">&#9660;</span> Abstract
+    </button>
+    <div id="abstract-X" class="abstract-content">
+      <p>Abstract text here...</p>
+    </div>
+  </article>
+  -->
+
+</BaseLayout>
+
+<script is:inline>
+  function toggleAbstract(abstractId) {
+    const abstract = document.getElementById(abstractId);
+    const button = abstract.previousElementSibling;
+
+    abstract.classList.toggle('open');
+    button.classList.toggle('open');
+  }
+</script>

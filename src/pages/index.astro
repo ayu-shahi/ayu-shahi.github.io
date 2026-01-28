@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Ayush Shahi" currentPage="home">
+  <section class="profile-section">
+    <img
+      src={`${base}images/profile.jpg`}
+      alt="Ayush Shahi"
+      class="profile-image"
+    />
+    <div class="profile-info">
+      <h1>Ayush Shahi</h1>
+      <p class="pronouns">he/him</p>
+      <p class="affiliation">
+        Graduate Student<br />
+        MA in International and Development Economics<br />
+        <a href="https://yale.edu" target="_blank" rel="noopener">Yale University</a>
+      </p>
+      <div class="contact-links">
+        <a href="mailto:ayush.shahi@yale.edu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://drive.google.com/your-cv-link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>About</h2>
+    <p>
+      Welcome! I am a graduate student at Yale University pursuing an MA in International
+      and Development Economics (IDE). My research interests lie in development economics,
+      particularly in topics related to economic opportunity, labor markets, and inequality.
+    </p>
+    <p>
+      Prior to Yale, I completed my Bachelor's degree in Economics and Finance at
+      <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener">Ashoka University</a>,
+      India, followed by a Postgraduate diploma in Advanced Economics.
+    </p>
+    <p>
+      I am a recipient of the <a href="https://www.inlaksfoundation.org/" target="_blank" rel="noopener">Inlaks Scholarship</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Research Interests</h2>
+    <p>
+      My current research concentrates on documenting variation in social norms concerning
+      caste and gender across India. I am broadly interested in understanding the mechanisms
+      through which social structures affect economic outcomes.
+    </p>
+    <ul>
+      <li>Development Economics</li>
+      <li>Labor Markets</li>
+      <li>Inequality</li>
+      <li>Social Norms</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      Feel free to reach out to me at <a href="mailto:ayush.shahi@yale.edu">ayush.shahi@yale.edu</a>.
+      I am always happy to connect and discuss research ideas.
+    </p>
+  </section>
+</BaseLayout>

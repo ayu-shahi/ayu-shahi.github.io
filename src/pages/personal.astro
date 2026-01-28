@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Personal - Ayush Shahi"
+  description="Personal interests and hobbies of Ayush Shahi"
+  currentPage="personal"
+>
+  <h1>Personal</h1>
+
+  <p>
+    Outside of research, I enjoy exploring new places, reading, and photography.
+    Here are some snapshots from my experiences.
+  </p>
+
+  <h2>Photography & Travel</h2>
+
+  <div class="image-grid">
+    <div class="image-block">
+      <img src={`${base}images/personal/travel-1.jpg`} alt="Travel photo 1" />
+      <div class="image-block-content">
+        <h3>New Haven, CT</h3>
+        <p>Exploring the Yale campus and surrounding areas.</p>
+      </div>
+    </div>
+
+    <div class="image-block">
+      <img src={`${base}images/personal/travel-2.jpg`} alt="Travel photo 2" />
+      <div class="image-block-content">
+        <h3>India</h3>
+        <p>Scenes from fieldwork and travels across the country.</p>
+      </div>
+    </div>
+
+    <div class="image-block">
+      <img src={`${base}images/personal/travel-3.jpg`} alt="Travel photo 3" />
+      <div class="image-block-content">
+        <h3>Himalayas</h3>
+        <p>Mountain treks and adventures.</p>
+      </div>
+    </div>
+
+    <!--
+    Add more image blocks as needed:
+
+    <div class="image-block">
+      <img src={`${base}images/personal/your-image.jpg`} alt="Description" />
+      <div class="image-block-content">
+        <h3>Title</h3>
+        <p>Description of the photo or experience.</p>
+      </div>
+    </div>
+    -->
+  </div>
+
+  <h2>Interests</h2>
+
+  <ul>
+    <li><strong>Reading:</strong> Economics, history, and fiction</li>
+    <li><strong>Photography:</strong> Street and landscape photography</li>
+    <li><strong>Travel:</strong> Exploring new cultures and places</li>
+    <li><strong>Music:</strong> Listening to and discovering new music</li>
+  </ul>
+
+</BaseLayout>
