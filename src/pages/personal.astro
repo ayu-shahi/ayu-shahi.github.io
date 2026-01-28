@@ -8,60 +8,117 @@ const base = import.meta.env.BASE_URL;
   description="Personal interests and hobbies of Ayush Shahi"
   currentPage="personal"
 >
-  <h1>Personal</h1>
-
-  <p>
-    Outside of research, I enjoy exploring new places, reading, and photography.
-    Here are some snapshots from my experiences.
-  </p>
-
-  <h2>Photography & Travel</h2>
-
-  <div class="image-grid">
-    <div class="image-block">
-      <img src={`${base}images/personal/travel-1.jpg`} alt="Travel photo 1" />
-      <div class="image-block-content">
-        <h3>New Haven, CT</h3>
-        <p>Exploring the Yale campus and surrounding areas.</p>
+  <!-- Image Slideshow Block - Add your images here -->
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <!--
+      Add your slideshow images here. Place images in public/images/personal/
+      Example:
+      <img src={`${base}images/personal/slide-1.jpg`} alt="Description" class="slide active" />
+      <img src={`${base}images/personal/slide-2.jpg`} alt="Description" class="slide" />
+      <img src={`${base}images/personal/slide-3.jpg`} alt="Description" class="slide" />
+      -->
+      <div class="slide-placeholder">
+        <p>Add your slideshow images to <code>public/images/personal/</code></p>
       </div>
     </div>
-
-    <div class="image-block">
-      <img src={`${base}images/personal/travel-2.jpg`} alt="Travel photo 2" />
-      <div class="image-block-content">
-        <h3>India</h3>
-        <p>Scenes from fieldwork and travels across the country.</p>
-      </div>
-    </div>
-
-    <div class="image-block">
-      <img src={`${base}images/personal/travel-3.jpg`} alt="Travel photo 3" />
-      <div class="image-block-content">
-        <h3>Himalayas</h3>
-        <p>Mountain treks and adventures.</p>
-      </div>
-    </div>
-
-    <!--
-    Add more image blocks as needed:
-
-    <div class="image-block">
-      <img src={`${base}images/personal/your-image.jpg`} alt="Description" />
-      <div class="image-block-content">
-        <h3>Title</h3>
-        <p>Description of the photo or experience.</p>
-      </div>
-    </div>
-    -->
+    <p class="slide-caption">A ferry ride from Sultan Batteri in Mangalore, India (shot on 35mm film)</p>
   </div>
 
-  <h2>Interests</h2>
+  <h2 class="section-header">Mentorship</h2>
+
+  <p>
+    I believe that supportive mentorship can help solve for some of the information barriers
+    that limit access to career and educational opportunities, especially for those from
+    marginalized backgrounds.
+  </p>
+
+  <p>
+    Please feel free to reach out to me at <a href="mailto:ayush.shahi@yale.edu">ayush.shahi@yale.edu</a> if
+    you have any questions regarding graduate school applications.
+  </p>
+
+  <p>
+    I volunteer with <a href="https://bahujanecon.org" target="_blank" rel="noopener">Bahujan Economists</a>,
+    an organization focused on increasing representation of historically marginalized communities in
+    economics research.
+  </p>
+
+  <h2 class="section-header">Resources for Economics Graduate School</h2>
 
   <ul>
-    <li><strong>Reading:</strong> Economics, history, and fiction</li>
-    <li><strong>Photography:</strong> Street and landscape photography</li>
-    <li><strong>Travel:</strong> Exploring new cultures and places</li>
-    <li><strong>Music:</strong> Listening to and discovering new music</li>
+    <li>
+      <a href="https://hackmd.io/@rdrsas/econgradsch" target="_blank" rel="noopener">A Guide to Econ Grad School Applications (esp. for Indians)</a>
+    </li>
+    <li>
+      <a href="https://magenta-editorial-197.notion.site" target="_blank" rel="noopener">How to prepare for the GRE</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/playlist?list=PLDesaqWTN6ESPaHy7QUKVmD41WTcNqhCd" target="_blank" rel="noopener">The Tested Tutor's GRE quantitative preparation playlist</a>
+    </li>
   </ul>
 
 </BaseLayout>
+
+<style>
+  .slideshow-container {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .slideshow {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--color-background-alt);
+  }
+
+  .slideshow img.slide {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+  }
+
+  .slideshow img.slide.active {
+    display: block;
+  }
+
+  .slide-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: var(--color-text-light);
+  }
+
+  .slide-placeholder code {
+    background: var(--color-border);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .slide-caption {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: var(--spacing-xs);
+    text-align: center;
+  }
+</style>
+
+<script is:inline>
+  // Simple slideshow functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length > 1) {
+      let currentSlide = 0;
+      setInterval(function() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 4000);
+    }
+  });
+</script>
