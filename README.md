@@ -248,9 +248,9 @@ Adjust `--max-width` in `src/styles/global.css` (default: 800px).
 
 ### 404 on deployed site
 
-- Verify `base` in `astro.config.mjs` matches your repo name
-- Make sure GitHub Pages source is set to "GitHub Actions"
-- Wait a few minutes after deployment for changes to propagate
+- Verify `base` in `astro.config.mjs` matches your repo name.
+- Make sure GitHub Pages source is set to "GitHub Actions".
+- Wait a few minutes after deployment for changes to propagate.
 
 ## Technology
 
